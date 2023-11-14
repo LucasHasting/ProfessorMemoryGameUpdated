@@ -11,8 +11,10 @@ function jquery_functions() {
   boxes("images");
   boxes("image-name");
 
-
+  //flag is used to determine when a border can be red
+  let flag = true;
   $(".images, .image-name").on("click", function () {
+
     //element array stores the box selected
     let element = [0, 0];
 
@@ -22,12 +24,21 @@ function jquery_functions() {
     //Loops for every image and name
     $(".images, .image-name").each(function () {
       //if something is selected
-      if ($(this).css("border-color") === "rgb(0, 128, 0)") {
+      if ($(this).css("border-color") === "rgb(0, 128, 0)" || $(this).css("border-color") === "rgb(255, 0, 0)") {
         //save the item selected and increase element index
         element[element_index] = this;
         element_index++;
       }
     });
+
+    //if there is only one thing selected and it is red, make it green
+    if (element_index === 1 && $(element[0]).css("border-color") === "rgb(255, 0, 0)")
+      $(element[0]).toggleClass('clicked_wrong');
+
+    //reset flag
+    if (element_index === 1)
+      flag = true;
+
 
     //If there are enough boxes selected
     if (element_index === 2) {
@@ -68,9 +79,14 @@ function jquery_functions() {
         jquery_functions();
       } else {
         //if the names do not match and the color of an item selected is not red
-        if ($(this).css("border-color") != "rgb(255, 0, 0)")
+        if ($(this).css("border-color") != "rgb(255, 0, 0)" && flag){
+          //prevents additional red borders
+          flag = false;
+          
           //make the item border red
           $(this).toggleClass('clicked_wrong');
+        }
+          
       }
 
       //if all items have been removed
@@ -96,7 +112,7 @@ function boxes(class_name) {
     //flag is used to determin what can be clicked
     flag = true;
 
-    //can't click on others
+    //can't click on item with background color
     $("." + class_name).each(function () {
       if (($(this).css("border-color") === "rgb(0, 128, 0)" || $(this).css("border-color") === "rgb(255, 0, 0)") && flag)
         flag = false;
