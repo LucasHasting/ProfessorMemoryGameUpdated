@@ -1,5 +1,5 @@
 //data
-let image_names = ["Morgan L. Burcham",
+let image_names = ["Morgan L. Etheredge",
   "J. Matt Colburn",
   "John D. Crabtree",
   "Barry A. Cumbie",
