@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--Add header info-->
+    <meta charset="UTF-8" />
+    <title>Computer Science and Information Systems Memory Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--Add files-->
+    <link rel="stylesheet" href="./styles/normalize_5.0.0.css" />
+    <link rel="stylesheet" href="./styles/bootstrap_5.0.2.css" />
+    <link rel="stylesheet" href="./styles/game_style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <script src="./scripts/functions.js"></script>
+    <script src="./scripts/game_control.js"></script>
+  </head>
+
+  <body>
+    <!--Initilize links-->
+    <p id="left">
+      <a
+        href="https://validator.w3.org/nu/?doc=https%3A%2F%2Flucashasting.github.io%2Fform-project%2F"
+        target="_blank"
+        >Validity Link</a
+      >
+    </p>
+    <p id="right">
+      <a href="https://github.com/LucasHasting/form-project" target="_blank"
+        >Link to Source Code</a
+      >
+    </p>
+    <!--Header content of website-->
+    <h2>Lucas Hasting's</h2>
+    <h2>Computer Science and Information Systems Memory Game</h2>
+    <!-- Trigger/Open The Modal -->
+    <button id="myBtn">Instructions</button>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Click on a professors face or name to select it</p>
+        <p>Click on the name or face again to deselect it</p>
+        <p>Match a name to a face</p>
+        <p>If a name or face is read, that means the two do not match</p>
+        <p>If a match occurs, the name and face will disappear</p>
+      </div>
+    </div>
+    <!--Div used to hold images and names-->
+    <div id="images"></div>
+    <!--Div used to hold the win message-->
+    <div id="win"></div>
+  </body>
+</html>
