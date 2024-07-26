@@ -14,7 +14,7 @@ let image_names = ["Morgan L. Etheredge",
   "Xihui \"Paul\" Zhang",
   "M. Shane Banks",
   "Kelly R. Irwin",
-  "James A. Jerkins];
+  "James A. Jerkins"];
 
 //driver function
 function start() {
